@@ -35,7 +35,7 @@ def download_and_load(test_split = 0.2, max_items_per_class = 10000):
   #randomize the dataset 
   permutation = np.random.permutation(y.shape[0])
   x = x[permutation, :]
-  y = y[permutation]
+  y = y[permutation].astype(np.int8)
 
   #reshape and inverse the colors 
   x = 255 - np.reshape(x, (x.shape[0], 28, 28))
